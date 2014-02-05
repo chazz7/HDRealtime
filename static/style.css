@@ -1,0 +1,331 @@
+/* Sticky Stuff */
+#stickies {
+	width: 95%;
+	height: 95%;
+	border: 2px
+	solid: #ccc;
+	padding: 10px; 
+}
+
+.sticky {
+	width: 50px;
+	height: 100px;
+}
+
+.gecko .outerSticky {
+	padding-top: 5px; 
+	padding-left: 0px;
+	padding-right: 3px;
+	padding-bottom: 29px;
+	color: black;
+	background-color: yellow;
+	border-style: solid;
+	border-color: black;
+}
+
+.gecko .innerSticky {
+	border-style: solid;
+	border-color: black;
+	background-color: yellow;
+
+}
+
+.webkit .outerSticky {
+	padding-top: 5px; 
+	padding-left: 0px;
+	padding-right: 10px;
+	padding-bottom: 33px;
+	color: black;
+	background-color: yellow;
+	border-style: solid;
+	border-color: black;
+}
+
+.webkit .innerSticky {
+	border-style: solid;
+	border-color: black;
+	border-width: medium;
+	background-color: yellow;
+}
+.delete {
+	border-style: solid;
+	border-color: black;
+	padding-bottom: 5px;
+	margin-bottom: 4px;
+	width: 10px;
+	height: 10px;
+	float: right;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 15px;
+	font-size: 20px;
+}
+
+textarea {
+	resize: none;
+}
+
+/* Buttons */
+.initialbutton {
+	width:100px;
+	height:15px;	
+}
+
+.formbutton {
+	width:157px;
+	height:30px;
+}
+
+.button {
+	border: solid 1px #b7b7b7;
+}
+
+.button2 {
+    display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+    font-size: 14px;
+	padding: .5em 2em .55em;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+    color: #606060;
+	background: #fff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+	background: -moz-linear-gradient(top,  #fff,  #ededed);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+	background-color: aqua;
+    border-radius: .5em;
+    box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+
+.play {
+	width:70px;
+	height:15px;
+	position: absolute;
+	top:25px;
+	left:25px;
+}
+
+.play:after {
+	content: "Play";
+}
+
+.people {
+	width:70px;
+	height:15px;
+	position: absolute;
+	top:25px;
+	left:175px;
+}
+
+.people:after {
+	content: "People";
+}
+
+.home {
+	width:70px;
+	height:15px;
+	position: absolute;
+	top:25px;
+	left:325px;
+}
+
+.home:after {
+	content: "Home";
+}
+
+.calls {
+	width:70px;
+	height:15px;
+	position: absolute;
+	top:25px;
+	left:475px;
+}
+
+.call:after {
+	content: "Calls";
+}
+
+.pause {
+	width:70px;
+	height:15px;
+	position: absolute;
+	top:25px;
+	left:625px;
+}
+
+.pause:after {
+	content: "Pause";
+}
+
+.clear {
+	width:70px;
+	height:15px;
+	position: absolute;
+	top:25px;
+	left:775px;
+}
+
+.clear:after {
+	content: "Clear";
+}
+
+.label {
+	width: 90px;
+	height: 15px;
+	position: absolute;
+	top:28px;
+	left: 925px;
+	text-align: center;
+	text-decoration: none;
+    font-size: 17px;
+}
+
+
+
+
+.map-canvas {
+	width:100%;
+	position: absolute;
+	top:100px;
+	left:0px;
+}
+
+.logout {
+	width:70px;
+	height:15px;
+	position: absolute;
+	top:25px;
+	left:1100px;
+}
+
+.buttons {
+    width:159px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom; -20px;
+}
+
+/* Button Content */
+.signUp:after {
+	content: "Create Account";
+}
+
+.login:after {
+	content: "Login";
+}
+
+.newSticky:after {
+	content: "New Sticky";
+}
+
+.logout:after {
+	content: "Logout";
+}
+
+.delete:after {
+	content: 'x';
+}	
+	
+/* Other Stuff */
+.colors {
+	height: 50px;
+	position: absolute;
+	top:30px;
+	left:711px;
+}
+
+.yeauhp {
+	text-align:center;
+	width:159px;
+	margin-left: auto;
+	margin-right:auto;
+	color:white;
+	font-family: 	'Georgia', serif;
+	font-size: 20px;
+	text-decoration: bold;
+}
+.words {
+	color: black;
+	width: 149px;
+	height: 23px;
+	margin-top:10px;
+	margin-bottom:4px;
+}
+.header {
+	display: inline-block;
+}
+
+body{
+	font-family:	sans-serif;
+	background:		#eee;
+}
+
+a, h1 {
+	margin-left: auto;
+	margin-right: auto;
+	color: black;
+}
+
+h1 {
+	font-family: 	'Georgia', serif;
+	margin:			0;
+	border-bottom: 	2px solid black; 
+}
+
+.page { 
+	height:			700px;
+	border: 		5px solid #ccc;
+    padding: 		0.8em; 
+	background: 	white; 
+	min-width:		1300px;
+	background-image: url('stickyBoard.png');
+	background-size: 100%;
+}
+.pageIntro {
+	width: 95%;
+	margin-left: auto;
+	margin-right: auto;
+	height:			575px;
+	border: 		5px solid #ccc;
+    padding: 		0.8em; 
+	min-width:		1200px;
+	background-size: 100%;
+	color: #606060;
+	border: solid 1px #b7b7b7;
+	background: #fff;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+	background: -moz-linear-gradient(top,  #fff,  #ededed);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+}
+
+.pageMain {
+	margin: 		2em auto; 
+	width: 			95%; 
+}
+
+.i {
+	color:red;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.i1 {
+	color:green;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.i2 {
+	color:blue;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.i3 {
+	color:orange;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.i4 {
+	color:cyan;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.i5 {
+	color:yellow;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}

@@ -17,3 +17,7 @@ def p(string):
 @app.route('/')
 def hello():
     return "Sup Chump"
+
+@app.route('/realtime')
+def realtime():
+    return render_template('realtime_map.html')
