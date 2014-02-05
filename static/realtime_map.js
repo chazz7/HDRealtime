@@ -95,7 +95,7 @@ var MapView = function(heatmap, map) {
 		var home = $('<div>');
 		home.addClass('button2');
 		home.addClass('home');
-		$('#butotns').append(home);
+		$('#buttons').append(home);
 		home.click(function() {
 			reset();
 			data = homeData;
@@ -104,6 +104,7 @@ var MapView = function(heatmap, map) {
 
 		var people = $('<div>');
 		people.addClass('button2');
+		people.addClass('people');
 		$('#buttons').append(people);
 		people.click(function() {
 			reset();
