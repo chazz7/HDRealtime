@@ -68,7 +68,6 @@ var MapView = function(heatmap, map) {
 		var onTick = function() { 
 			var heatmapData = [];
 			if (isFinished) { reset(); return; }
-			if (currentIndex == data.)
 			for (x =0; x < data.length; x++) {
 				var item = data[x];
 				lat = item.latitude;
