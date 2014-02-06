@@ -56,3 +56,17 @@ def hello():
 @app.route('/realtime')
 def realtime():
     return render_template('realtime_map.html')
+
+@app.route('/test')
+def test():
+    post = {}
+    post['value'] = 7
+    post['time'] = "10:30"
+    posts = mongo.db.posts
+    post_id = posts.insert(post)
+    return post_id
+
+
+
+
+
