@@ -37,15 +37,17 @@ var MapView = function(heatmap, map) {
 		}
 
 		var getData = function() {
+			url = "data"
 			$.get(url, function(data){
 				if (data.success) {
 					callData = data.calls;
-					homeData = data.home;
+					homeData = data.homes;
 					peopleData = data.people;
 					alert("Data Loaded!");
 				}
 			});
 		}
+		getData();
 
 		var reset = function() {
 			clearInterval(timer); timer = null;
