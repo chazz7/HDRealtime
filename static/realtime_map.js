@@ -198,7 +198,7 @@ initialize = function() {
 
   var mapOptions = {
     center: mexico,
-    zoom: 12
+    zoom: 7
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"),
       mapOptions);
@@ -211,7 +211,7 @@ initialize = function() {
 // }
 
 // function changeRadius() {
-  heatmap.set('radius', 20);
+  heatmap.set('radius', 2);
   
   var mapView = new MapView(heatmap, map);
   mapView.initButtons();
