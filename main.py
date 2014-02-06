@@ -59,14 +59,26 @@ def do_json(data):
 def hello():
     return "Sup Chump"
 
+def arrayForKey(key):
+    values = mongo.db.points.find({"key" : key },fields={"_id": False})
+    values_arr = []
+    for value in values:
+        values_arr.append(value)
+
+    return values_arr
+
 @app.route('/data')
 def data():
-    homes = mongo.db.points.find({"key" : "divHome"},fields={"_id": False})
-    values = []
-    for home in homes:
-        values.append(home)
-    p(values)
-    response = { 'success' : False, 'data' : values }
+    homes = arrayForKey("divHome")
+    people = arrayForKey("divPeople")
+    calls = arrayForKey("divCalls")
+
+    response = {}
+    response['success'] = True
+    response['homes'] = homes
+    response['people'] = people
+    response['calls'] = calls
+    
     return jsonify(response)
 
 
