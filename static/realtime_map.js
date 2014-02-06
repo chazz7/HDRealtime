@@ -91,6 +91,7 @@ var MapView = function(heatmap, map) {
 		calls.click(function() {
 			reset();
 			data = callData;
+			console.log(data);
 			changeLabel("Calls");
 		});
 
@@ -101,6 +102,7 @@ var MapView = function(heatmap, map) {
 		home.click(function() {
 			reset();
 			data = homeData;
+			console.log(data);
 			changeLabel("DivHome");
 		});
 
@@ -111,6 +113,7 @@ var MapView = function(heatmap, map) {
 		people.click(function() {
 			reset();
 			data = peopleData;
+			console.log(data)
 			changeLabel("DivPeople");
 		});
 
@@ -119,7 +122,8 @@ var MapView = function(heatmap, map) {
 		play.addClass('play');
 		$('#buttons').append(play);
 		play.click(function() {
-			if (!isRunning && values.length) {
+			if (!isRunning && data.length) {
+				console.log("yeauhp");
 				timer = setInterval(onTick,1500);
 			}
 			isRunning = true;
