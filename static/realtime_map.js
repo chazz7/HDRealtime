@@ -59,9 +59,12 @@ var MapView = function(heatmap, map) {
 
 		var isFinished = function() {
 			if (!data) { return true; }
-
+			console.log("still good");
 			item = data[0]
+			console.log(item);
 			values = item.values;
+			console.log(values);
+			console.log(currentIndex);
 			if (currentIndex >= values.length) { return true; }
 
 			return false;
