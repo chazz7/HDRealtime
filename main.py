@@ -60,6 +60,7 @@ def hello():
     return "Sup Chump"
 
 @app.route('/data')
+def data():
     homes = mongo.db.points.find({"key" : "divHome"})
     return jsonify(homes)
 
