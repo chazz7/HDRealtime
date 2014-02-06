@@ -198,7 +198,7 @@ initialize = function() {
 
   var mapOptions = {
     center: mexico,
-    zoom: 7
+    zoom: 10
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"),
       mapOptions);
@@ -207,11 +207,11 @@ initialize = function() {
     data: heatmapData
   });
   heatmap.setMap(map);
-  heatmap.set('gradient', gradient);
+  // heatmap.set('gradient', gradient);
 // }
 
 // function changeRadius() {
-  heatmap.set('radius', 7);
+  heatmap.set('radius', 5);
   
   var mapView = new MapView(heatmap, map);
   mapView.initButtons();
