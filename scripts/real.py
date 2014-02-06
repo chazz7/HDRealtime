@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import csv
 
-def doFormat(filename, skipRow=True, save=False):
+def doFormat(filename, key, skipRow=True, save=False):
     db = None
     if save:
         client = MongoClient()
@@ -36,6 +36,7 @@ def doFormat(filename, skipRow=True, save=False):
             point['values'] = values
             points.append(point)
             if save:
+                point['key'] = key
                 db.points.insert(point)
         
     print points
@@ -43,10 +44,20 @@ def doFormat(filename, skipRow=True, save=False):
     # print points
     # return points
 
-
 path = "../data/"
+
+def saveCalls():
+    doFormat(path + "SumCallsDaily15days.csv", "sumCalls", save=True)
+
+def saveHome():
+    doFormat(path + "DivHomeDaily15days.csv", "divHome", save=True)
+
+def savePeople():
+    doFormat(path + "DivPeopleDaily.csv", "divPeople", save=True)
+
+
 #doFormat(path + "SumCallsDaily15days.csv")
-doFormat(path + "DivHomeDaily15days.csv")
+#doFormat(path + "DivHomeDaily15days.csv")
 #doFormat(path + "DivPeopleDaily.csv")
 
 
