@@ -74,7 +74,7 @@ var MapView = function(heatmap, map) {
 		var onTick = function() { 
 			console.log("ticked");
 			var heatmapData = [];
-			if (isFinished) { reset(); return; }
+			if (isFinished()) { reset(); return; }
 			for (x =0; x < data.length; x++) {
 				var item = data[x];
 				lat = item.latitude;
