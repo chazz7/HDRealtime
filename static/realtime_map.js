@@ -80,6 +80,11 @@ var MapView = function(heatmap, map) {
 				values = item.values;
 				val = values[currentIndex];
 				var point = {location: new google.maps.LatLng(lat,lng), weight: val};
+				if (point == undefined || lat == undefined || lng == undefined) {
+					console.log("we got one");
+					console.log(point);
+					continue;
+				}
 				heatmapData.push(point);
 			};
 			console.log(heatmapData);
@@ -189,10 +194,10 @@ initialize = function() {
 	];
 // // 42.3736° N, 71.1106
 	var cambridge = new google.maps.LatLng(42.3736, -71.1106);
-
+	var mexico = new google.maps.LatLng(19.427512, -99.19574399999999);
 
   var mapOptions = {
-    center: cambridge,
+    center: mexico,
     zoom: 12
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"),
