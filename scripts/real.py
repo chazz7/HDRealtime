@@ -5,7 +5,7 @@ def doFormat(filename, key, skipRow=True, save=False):
     db = None
     if save:
         client = MongoClient()
-        db = client.app
+        db = client.main
     points = []
     with open(filename, "rU") as csvfile:
         file = csv.reader(csvfile, delimiter=",")
