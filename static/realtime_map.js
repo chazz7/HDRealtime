@@ -51,6 +51,7 @@ var MapView = function(heatmap, map) {
 
 		var reset = function() {
 			clearInterval(timer); timer = null;
+			heatmap.setData([]);
 			values = [];
 			isPaused = false;
 			isRunning = false;
@@ -198,7 +199,7 @@ initialize = function() {
 
   var mapOptions = {
     center: mexico,
-    zoom: 10
+    zoom: 12
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"),
       mapOptions);
