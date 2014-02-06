@@ -58,14 +58,12 @@ var MapView = function(heatmap, map) {
 		}
 
 		var isFinished = function() {
-			console.log(data);
 			if (!data.length) { return true; }
-			console.log("still good");
 			item = data[0]
-			console.log(item);
+			// console.log(item);
 			values = item.values;
-			console.log(values);
-			console.log(currentIndex);
+			// console.log(values);
+			// console.log(currentIndex);
 			if (currentIndex >= values.length) { return true; }
 
 			return false;
