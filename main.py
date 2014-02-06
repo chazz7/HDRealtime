@@ -71,7 +71,7 @@ def arrayForKey(key):
 def data():
     homes = arrayForKey("divHome")
     people = arrayForKey("divPeople")
-    calls = arrayForKey("divCalls")
+    calls = arrayForKey("sumCalls")
 
     response = {}
     response['success'] = True
