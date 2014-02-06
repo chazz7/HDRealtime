@@ -34,6 +34,7 @@ def doFormat(filename, skipRow=True, save=False):
                 values.append(col)
             
             point['values'] = values
+            points.append(point)
             if save:
                 db.points.insert(point)
         
