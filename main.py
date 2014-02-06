@@ -61,7 +61,7 @@ def hello():
 
 @app.route('/data')
 def data():
-    homes = mongo.db.points.find({"key" : "divHome"})
+    homes = mongo.db.points.find({"key" : "divHome"},fields={"_id": False})
     values = []
     for home in homes:
         values.append(home)
