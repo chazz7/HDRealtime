@@ -43,7 +43,7 @@ var MapView = function(heatmap, map) {
 					callData = data.calls;
 					homeData = data.homes;
 					peopleData = data.people;
-					alert("Data Loaded!");
+					// alert("Data Loaded!");
 				}
 			});
 		}
@@ -58,7 +58,8 @@ var MapView = function(heatmap, map) {
 		}
 
 		var isFinished = function() {
-			if (!data) { return true; }
+			console.log(data);
+			if (!data.length) { return true; }
 			console.log("still good");
 			item = data[0]
 			console.log(item);
