@@ -63,7 +63,8 @@ def test():
     post['value'] = 7
     post['time'] = "10:30"
     posts = mongo.db['posts']
-#    post_id = posts.insert(post)
+    post_id = posts.insert(post)
+    p(post_id)
     return "going"
 
 
