@@ -68,6 +68,7 @@ var MapView = function(heatmap, map) {
 		}
 
 		var onTick = function() { 
+			console.log("ticked");
 			var heatmapData = [];
 			if (isFinished) { reset(); return; }
 			for (x =0; x < data.length; x++) {
@@ -124,7 +125,7 @@ var MapView = function(heatmap, map) {
 		play.click(function() {
 			if (!isRunning && data.length) {
 				console.log("yeauhp");
-				timer = setInterval(onTick,1500);
+				timer = window.setInterval(onTick,1500);
 			}
 			isRunning = true;
 		});
