@@ -62,8 +62,11 @@ def hello():
 @app.route('/data')
 def data():
     homes = mongo.db.points.find({"key" : "divHome"})
-    p(homes)
-    return jsonify(homes)
+    values = []
+    for home in homes:
+        values.append(home)
+    p(values)
+    return jsonify(values)
 
 
 @app.route('/realtime')
