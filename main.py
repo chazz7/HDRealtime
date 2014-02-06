@@ -66,7 +66,8 @@ def data():
     for home in homes:
         values.append(home)
     p(values)
-    return jsonify(values)
+    response = { 'success' : False, 'data' : values }
+    return jsonify(response)
 
 
 @app.route('/realtime')
