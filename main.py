@@ -1,7 +1,7 @@
 import os, traceback, time
 import ast
 import sys
-import simplejson
+import simplejson as json
 import datetime
 import json
 import urllib2
@@ -21,6 +21,12 @@ mongo = PyMongo(app)
 def p(string):
     print string
     sys.stdout.flush()
+
+def load_data(request):
+  return json.loads(request.data)
+
+def do_json(data):
+  return json.dumps(data, cls=NewEncoder)
 
 #class Point(db.Model):
 #    id = db.Column(db.Integer, primary_key=True)
@@ -52,6 +58,11 @@ def p(string):
 @app.route('/')
 def hello():
     return "Sup Chump"
+
+@app.route('/data')
+    homes = mongo.db.points.find({"key" : "divHome"})
+    return jsonify(homes)
+
 
 @app.route('/realtime')
 def realtime():
