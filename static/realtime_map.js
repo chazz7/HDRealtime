@@ -211,7 +211,7 @@ initialize = function() {
 // }
 
 // function changeRadius() {
-  heatmap.set('radius', 2);
+  heatmap.set('radius', 7);
   
   var mapView = new MapView(heatmap, map);
   mapView.initButtons();
