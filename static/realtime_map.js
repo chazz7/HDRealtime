@@ -89,7 +89,7 @@ var MapView = function(heatmap, map) {
 				}
 				heatmapData.push(point);
 			};
-			console.log(heatmapData);
+			// console.log(heatmapData);
 			heatmap.setData(heatmapData);
 			currentIndex++;
 		}	
@@ -209,7 +209,7 @@ initialize = function() {
     data: heatmapData
   });
   heatmap.setMap(map);
-  // heatmap.set('gradient', gradient);
+  heatmap.set('gradient', gradient);
 // }
 
 // function changeRadius() {
