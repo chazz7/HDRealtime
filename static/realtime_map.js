@@ -79,7 +79,7 @@ var MapView = function(heatmap, map) {
 				lat = item.latitude;
 				lng = item.longitude;
 				values = item.values;
-				val = values[currentIndex]/10.0;
+				val = values[currentIndex]/5.0;
 				// console.log(val);
 				var point = {location: new google.maps.LatLng(lat,lng), weight: val};
 				if (point == undefined || lat == undefined || lng == undefined) {
@@ -200,7 +200,7 @@ initialize = function() {
 
   var mapOptions = {
     center: mexico,
-    zoom: 12
+    zoom: 11
   };
   var map = new google.maps.Map(document.getElementById("map-canvas"),
       mapOptions);
