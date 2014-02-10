@@ -79,7 +79,7 @@ var MapView = function(heatmap, map) {
 				lat = item.latitude;
 				lng = item.longitude;
 				values = item.values;
-				val = values[currentIndex]/5.0;
+				val = values[currentIndex]/7.0;
 				// console.log(val);
 				var point = {location: new google.maps.LatLng(lat,lng), weight: val};
 				if (point == undefined || lat == undefined || lng == undefined) {
