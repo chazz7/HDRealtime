@@ -80,7 +80,7 @@ var MapView = function(heatmap, map) {
 				lng = item.longitude;
 				values = item.values;
 				val = values[currentIndex];
-				console.log(val);
+				// console.log(val);
 				var point = {location: new google.maps.LatLng(lat,lng), weight: val};
 				if (point == undefined || lat == undefined || lng == undefined) {
 					console.log("we got one");
@@ -209,11 +209,11 @@ initialize = function() {
     data: heatmapData
   });
   heatmap.setMap(map);
-  heatmap.set('gradient', gradient);
+  // heatmap.set('gradient', gradient);
 // }
 
 // function changeRadius() {
-  heatmap.set('radius', 1);
+  heatmap.set('radius', 5);
   
   var mapView = new MapView(heatmap, map);
   mapView.initButtons();
