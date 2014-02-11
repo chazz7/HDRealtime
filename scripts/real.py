@@ -42,7 +42,7 @@ def doFormat(filename, key, skipRow=True, save=False, find_max=False):
                     current_max = max_val
             if save:
                 point['key'] = key
-                # db.points.insert(point)
+                db.points.insert(point)
     
     if find_max:
         db_max = { "key" : key, "value" : current_max }
@@ -68,8 +68,8 @@ def savePeople():
     # doFormat(path + "DivPeopleDaily.csv", "divPeople", save=True)
     doFormat(path + "DivPeopleDaily.csv", "divPeople", save=True, find_max=True)
 
-saveCalls()
-saveHome()
-savePeople()
+# saveCalls()
+# saveHome()
+# savePeople()
 
 

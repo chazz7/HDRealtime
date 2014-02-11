@@ -41,8 +41,13 @@ var MapView = function(heatmap, map) {
 			$.get(url, function(data){
 				if (data.success) {
 					callData = data.calls;
+					callMax = data.calls_max;
+
 					homeData = data.homes;
+					homeMax = data.homes_max;
+
 					peopleData = data.people;
+					peopleMax = data.people_max;
 					// alert("Data Loaded!");
 				}
 			});
@@ -94,6 +99,10 @@ var MapView = function(heatmap, map) {
 			currentIndex++;
 		}	
 
+		var setMax = function(max) {
+			heatmap.set("maxIntensity", max/7.0);
+		}
+
 		var calls = $('<div>');
 		calls.addClass('button2');
 		calls.addClass('calls');
@@ -101,6 +110,7 @@ var MapView = function(heatmap, map) {
 		calls.click(function() {
 			reset();
 			data = callData;
+			setMax(callMax);
 			console.log(data);
 			changeLabel("Calls");
 		});
@@ -112,6 +122,7 @@ var MapView = function(heatmap, map) {
 		home.click(function() {
 			reset();
 			data = homeData;
+			setMax(homeMax);
 			console.log(data);
 			changeLabel("DivHome");
 		});
@@ -123,6 +134,7 @@ var MapView = function(heatmap, map) {
 		people.click(function() {
 			reset();
 			data = peopleData;
+			setMax(peopleMax);
 			console.log(data)
 			changeLabel("DivPeople");
 		});

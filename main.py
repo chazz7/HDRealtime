@@ -67,17 +67,29 @@ def arrayForKey(key):
 
     return values_arr
 
+def maxForKey(key):
+    value = mongo.db.maxes.find_one({"key" : key})
+    return value
+
 @app.route('/data')
 def data():
     homes = arrayForKey("divHome")
+    homes_max = maxForKey("divHome")
+
     people = arrayForKey("divPeople")
+    people_max = maxForKey("people_max")
+
     calls = arrayForKey("sumCalls")
+    calls_max = maxForKey("sumCalls")
 
     response = {}
     response['success'] = True
     response['homes'] = homes
+    response['homes_max'] = homes_max
     response['people'] = people
+    response['people_max'] = people_max
     response['calls'] = calls
+    response['calls_max'] = calls_max
     
     return jsonify(response)
 
