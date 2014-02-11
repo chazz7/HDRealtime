@@ -36,6 +36,7 @@ def doFormat(filename, key, skipRow=True, save=False, find_max=False):
             
             point['values'] = values
             points.append(point)
+            print db
             if find_max:
                 max_val = max(values)
                 if current_max == None or max_val > current_max:
@@ -46,7 +47,8 @@ def doFormat(filename, key, skipRow=True, save=False, find_max=False):
     
     if find_max:
         db_max = { "key" : key, "value" : current_max }
-        maxes = db.maxes
+        print db
+        maxes = db['maxes']
         maxes.insert(db_max)
         print db_max
 
