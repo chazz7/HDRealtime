@@ -68,7 +68,8 @@ def arrayForKey(key):
     return values_arr
 
 def maxForKey(key):
-    value = mongo.db.maxes.find_one({"key" : key})
+    db_max = mongo.db.maxes.find_one({"key" : key})
+    value = db_max.value
     return value
 
 @app.route('/data')
