@@ -31,6 +31,8 @@ var MapView = function(heatmap, map) {
 	var isRunning = false;
 	var currentIndex = 0;
 
+	var currentStep = 0;
+
 	this.initButtons = function() {
 		var label = $('<div>');
 		$('#buttons').append(label);
@@ -83,12 +85,18 @@ var MapView = function(heatmap, map) {
 			console.log("ticked");
 			var heatmapData = [];
 			if (isFinished()) { reset(); return; }
+			var length = data.length;
+			var animateNum = length/3 * currentStep;
 			for (x =0; x < data.length; x++) {
 				var item = data[x];
 				lat = item.latitude;
 				lng = item.longitude;
 				values = item.values;
-				val = values[currentIndex]/7.0;
+				var val = 0;
+				if x < animateNum || !currentIndex:
+					val = values[currentIndex]/7.0;
+				else:
+					val = values[currentIndex-1]/7.0;
 				// console.log(val);
 				var point = {location: new google.maps.LatLng(lat,lng), weight: val};
 				if (point == undefined || lat == undefined || lng == undefined) {
@@ -100,7 +108,10 @@ var MapView = function(heatmap, map) {
 			};
 			// console.log(heatmapData);
 			heatmap.setData(heatmapData);
-			currentIndex++;
+			currentStep++;
+			if currentStep > 3 || !currentIndex: 
+				currentIndex++;
+				currentStep = 1;
 		}	
 
 		var setMax = function(max) {
@@ -150,7 +161,7 @@ var MapView = function(heatmap, map) {
 		play.click(function() {
 			if (!isRunning && data.length) {
 				console.log("yeauhp");
-				timer = window.setInterval(onTick,1500);
+				timer = window.setInterval(onTick,500);
 			}
 			isRunning = true;
 		});
