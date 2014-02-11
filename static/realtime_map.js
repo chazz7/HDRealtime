@@ -22,6 +22,10 @@ var MapView = function(heatmap, map) {
 	var homeData = [];
 	var peopleData = [];
 
+	var callMax = 0;
+	var homeMax = 0;
+	var peopleMax = 0;
+
 	var timer = null;
 	var	isPaused = false;
 	var isRunning = false;
