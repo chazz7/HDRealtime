@@ -93,7 +93,7 @@ var MapView = function(heatmap, map) {
 				lng = item.longitude;
 				values = item.values;
 				var val = 0;
-				if x < animateNum || !currentIndex:
+				if (x < animateNum || !currentIndex):
 					val = values[currentIndex]/7.0;
 				else:
 					val = values[currentIndex-1]/7.0;
@@ -109,7 +109,7 @@ var MapView = function(heatmap, map) {
 			// console.log(heatmapData);
 			heatmap.setData(heatmapData);
 			currentStep++;
-			if currentStep > 3 || !currentIndex: 
+			if (currentStep > 3 || !currentIndex): 
 				currentIndex++;
 				currentStep = 1;
 		}	
