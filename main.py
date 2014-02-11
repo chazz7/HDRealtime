@@ -69,6 +69,8 @@ def arrayForKey(key):
 
 def maxForKey(key):
     db_max = mongo.db.maxes.find_one({"key" : key})
+    p(dir(db_max))
+    p(db_max)
     value = db_max.value
     return value
 
