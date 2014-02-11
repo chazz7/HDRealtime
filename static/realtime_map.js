@@ -92,11 +92,11 @@ var MapView = function(heatmap, map) {
 				lat = item.latitude;
 				lng = item.longitude;
 				values = item.values;
-				var val = 0;
-				if (x < animateNum || !currentIndex):
-					val = values[currentIndex]/7.0;
-				else:
-					val = values[currentIndex-1]/7.0;
+			
+				var index = currentIndex - 1;
+				if (x < animateNum || !currentIndex) { index = currentIndex; }
+				val = values[index]/7.0;
+				
 				// console.log(val);
 				var point = {location: new google.maps.LatLng(lat,lng), weight: val};
 				if (point == undefined || lat == undefined || lng == undefined) {
@@ -109,9 +109,10 @@ var MapView = function(heatmap, map) {
 			// console.log(heatmapData);
 			heatmap.setData(heatmapData);
 			currentStep++;
-			if (currentStep > 3 || !currentIndex): 
+			if (currentStep > 3 || !currentIndex) { 
 				currentIndex++;
 				currentStep = 1;
+			}
 		}	
 
 		var setMax = function(max) {
