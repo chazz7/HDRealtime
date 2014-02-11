@@ -80,7 +80,7 @@ def data():
     homes_max = maxForKey("divHome")
 
     people = arrayForKey("divPeople")
-    people_max = maxForKey("people_max")
+    people_max = maxForKey("divPeople")
 
     calls = arrayForKey("sumCalls")
     calls_max = maxForKey("sumCalls")
